@@ -1,0 +1,20 @@
+-buildpath: \
+	osgi.core;version='[4.2,5)',\
+	osgi.cmpn,\
+	${junit},\
+	biz.aQute.bndlib;version=2.4
+-runbundles: \
+	biz.aQute.bndlib;version=2.4,\
+	org.apache.felix.log
+
+-runee: JavaSE-1.6
+-runfw: org.apache.felix.framework
+-runsystempackages: sun.reflect
+-runvm: -ea
+-runtrace: true
+Bundle-Version: 0.0.0.${tstamp}
+Private-Package: example.integration
+Test-Cases: ${classes;CONCRETE;EXTENDS;junit.framework.TestCase}
+
+-testpath:  \
+    ${junit}
